@@ -13,58 +13,67 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imagePicker.delegate = self
-
     }
 
-
-    
+    var flag = 0
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var pantImageView: UIImageView!
     @IBOutlet var chooseBuuton: UIButton!
+    @IBOutlet weak var pantButto: UIImageView!
+    
     var imagePicker = UIImagePickerController()
+
+    @IBAction func pantBtnClicked(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+            
+            flag = 2
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true) {
+                
+            }
+        }
+    }
     
     @IBAction func btnClicked() {
         
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             print("Button capture")
             
+            flag = 1
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum;
             imagePicker.allowsEditing = false
             
-            self.present(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true) {
+                
+            }
         }
     }
     
-//    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-//        self.dismiss(animated: true, completion: { () -> Void in
-//
-//        })
-//
-//        imageView.image = image
-//    }
-    
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.contentMode = .scaleAspectFit
-//            imageView.image = pickedImage
-//        }
-//        
-//        dismiss(animated: true, completion: nil)
-//    }
-    
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let selectedImage = info[.originalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = selectedImage
+            
+            if flag == 1 {
+//                imageView.contentMode = .scaleAspectFill
+                imageView.image = selectedImage
+            } else if flag == 2 {
+//                pantImageView.contentMode = .scaleAspectFill
+                
+                pantImageView.image = selectedImage
+            }
+            
         } else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         dismiss(animated: true, completion: nil)
 
     }
+
+
 }
-
-
-

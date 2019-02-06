@@ -31,17 +31,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-v3-jfa">
-                                <rect key="frame" x="161" y="248" width="46" height="30"/>
+                                <rect key="frame" x="67" y="181" width="240" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="DWt-V2-Ofc"/>
+                                    <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFw-df-xIH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-02-5cz">
-                                <rect key="frame" x="161" y="449" width="46" height="30"/>
+                                <rect key="frame" x="125" y="343" width="119" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pantBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxR-aW-Npi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,6 +51,8 @@
                     <connections>
                         <outlet property="chooseBuuton" destination="J1e-v3-jfa" id="MvV-4G-kwA"/>
                         <outlet property="imageView" destination="uG0-v9-du2" id="bbY-b1-1dl"/>
+                        <outlet property="pantButto" destination="c3U-ZE-aJf" id="kK5-Z3-caG"/>
+                        <outlet property="pantImageView" destination="c3U-ZE-aJf" id="ATO-Hj-ugo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
