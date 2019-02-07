@@ -50,9 +50,9 @@
                     </view>
                     <connections>
                         <outlet property="chooseBuuton" destination="J1e-v3-jfa" id="MvV-4G-kwA"/>
-                        <outlet property="imageView" destination="uG0-v9-du2" id="bbY-b1-1dl"/>
                         <outlet property="pantButto" destination="c3U-ZE-aJf" id="kK5-Z3-caG"/>
                         <outlet property="pantImageView" destination="c3U-ZE-aJf" id="ATO-Hj-ugo"/>
+                        <outlet property="torsoImageView" destination="uG0-v9-du2" id="k60-cZ-Yqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
