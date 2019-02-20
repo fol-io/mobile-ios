@@ -17,10 +17,18 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func SignUpTapped(_ sender: Any) {
+        postRequest(url: "https://proj-fash.herokuapp.com/api/auth/signup")
+    }
+    
+    @IBAction func LoginTapped(_ sender: Any) {
+        postRequest(url: "https://proj-fash.herokuapp.com/api/auth/login")
+    }
+    
+    func postRequest(url: String) {
         
         let parameters = ["email": emailTextField.text!, "password": passwordTextField.text!]
         
-        guard let url = URL(string: "https://proj-fash.herokuapp.com/api/auth/signup") else { return }
+        guard let url = URL(string: url) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -44,12 +52,8 @@ class LoginViewController: UIViewController {
                 }
             }
             
-        }.resume()
+            }.resume()
     }
-    
-    @IBAction func LoginTapped(_ sender: Any) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
