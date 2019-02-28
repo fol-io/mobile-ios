@@ -11,6 +11,7 @@ import Foundation
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var bottomStackView: UIStackView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
@@ -30,11 +31,12 @@ class LoginViewController: UIViewController {
                 postRequest(url: "https://try--me.herokuapp.com/auth/signup", callName: "signUp")
             
             } else {
-                print("password validation failed")
+                self.alert(title: "password validation failed", message: "password needs to be stronger", actionTitle: "OK")
+                //TODO: BE MORE SPECIFIC FOR WHAT IS WRONG WITH PASSWORD
             }
 
         } else {
-            print("invalid email address")
+            self.alert(title: "Invalid email", message: "Please enter a valid email", actionTitle: "OK")
         }
     }
     
@@ -161,10 +163,72 @@ class LoginViewController: UIViewController {
         }
     }
 
+    func alert(title: String, message: String, actionTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
+        SetupConstraints()
+        UIDesign()
+    }
+    
+    func UIDesign() {
+        //LOGIN BUTTON
+        logInButton.backgroundColor = .clear
+        logInButton.layer.cornerRadius = 40
+        logInButton.layer.borderWidth = 1
+        logInButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        logInButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        logInButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        
+        
+    }
+    
+    func SetupConstraints(){
+        //LOGIN BUTTON
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+        logInButton.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 15).isActive = true
+        logInButton.trailingAnchor.constraint(equalTo: bottomStackView.trailingAnchor, constant: -15).isActive = true
+        logInButton.bottomAnchor.constraint(equalTo: signUpButton.topAnchor, constant: -20).isActive = true
+        logInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10).isActive=true
+        
+        //STACK VIEW
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        bottomStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        bottomStackView.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: 1).isActive = true
+        bottomStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
+
+        // SIGN UP BUTTON
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 20).isActive = true
+        signUpButton.bottomAnchor.constraint(equalTo: bottomStackView.bottomAnchor, constant: -20).isActive = true
+        signUpButton.trailingAnchor.constraint(equalTo: bottomStackView.trailingAnchor, constant: -15).isActive = true
+        signUpButton.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 15).isActive = true
+        
+        //EMAIL TEXT FIELD
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.topAnchor.constraint(equalTo: bottomStackView.topAnchor, constant: 20).isActive = true
+        emailTextField.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -5).isActive = true
+        emailTextField.trailingAnchor.constraint(equalTo: bottomStackView.trailingAnchor, constant: -15).isActive = true
+        emailTextField.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 15).isActive = true
+        
+        //PASSWORD TEXT FIELD
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 5).isActive = true
+        passwordTextField.trailingAnchor.constraint(equalTo: bottomStackView.trailingAnchor, constant: -15).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 15).isActive = true
+        passwordTextField.bottomAnchor.constraint(equalTo: logInButton.topAnchor, constant: -10).isActive = true
+        
+        
     }
 
 }
