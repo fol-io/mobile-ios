@@ -173,23 +173,27 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        self.view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        
         SetupConstraints()
         UIDesign()
     }
     
     func UIDesign() {
+        //BACKGROUND GRADIENT
+        let gradient = CAGradientLayer(start: .topCenter, end: .bottomCenter, colors: [UIColor.white.cgColor, UIColor.gray.cgColor], type: .axial)
+        gradient.frame = view.bounds
+        view.layer.insertSublayer(gradient, at: 0)
+
         //LOGIN BUTTON
         logInButton.backgroundColor = .clear
         logInButton.layer.cornerRadius = 40
         logInButton.layer.borderWidth = 1
         logInButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         logInButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        logInButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        logInButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         
-        
+        //SIGNUP BUTTON
+        signUpButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        signUpButton.setTitle("SIGN UP", for: .normal)
     }
     
     func SetupConstraints(){
