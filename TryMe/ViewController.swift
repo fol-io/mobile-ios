@@ -23,7 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var torsoImageView: ResizableView!
     @IBOutlet weak var pantImageView: ResizableView!
     @IBOutlet var chooseBuuton: UIButton!
-    @IBOutlet weak var pantButto: UIImageView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editPantButton: UIButton!
     @IBOutlet weak var mannequinView: UIImageView!
