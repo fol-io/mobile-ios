@@ -1,0 +1,21 @@
+PODS:
+  - TinyCrayon (3.3.2):
+    - TinyCrayon/TCCore (= 3.3.2)
+    - TinyCrayon/TCMask (= 3.3.2)
+  - TinyCrayon/TCCore (3.3.2)
+  - TinyCrayon/TCMask (3.3.2):
+    - TinyCrayon/TCCore
+
+DEPENDENCIES:
+  - TinyCrayon
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - TinyCrayon
+
+SPEC CHECKSUMS:
+  TinyCrayon: 1950ca37477d4198a7f790f7811cac1e20f9e108
+
+PODFILE CHECKSUM: eed15be8537bff6dae743e52338b63ceeecf17f0
+
+COCOAPODS: 1.5.3

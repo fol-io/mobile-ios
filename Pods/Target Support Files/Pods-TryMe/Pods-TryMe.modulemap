@@ -1,0 +1,6 @@
+framework module Pods_TryMe {
+  umbrella header "Pods-TryMe-umbrella.h"
+
+  export *
+  module * { export * }
+}
