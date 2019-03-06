@@ -165,12 +165,21 @@
                                     <action selector="pantBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxR-aW-Npi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaE-sm-2Lw">
+                                <rect key="frame" x="151" y="63" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="editButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf0-fD-wZt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="chooseBuuton" destination="J1e-v3-jfa" id="MvV-4G-kwA"/>
+                        <outlet property="editButton" destination="SaE-sm-2Lw" id="xmh-vw-C8b"/>
                         <outlet property="pantButto" destination="c3U-ZE-aJf" id="kK5-Z3-caG"/>
                         <outlet property="pantImageView" destination="c3U-ZE-aJf" id="ATO-Hj-ugo"/>
                         <outlet property="torsoImageView" destination="uG0-v9-du2" id="k60-cZ-Yqq"/>

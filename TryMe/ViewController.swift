@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import TCMask
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TCMaskViewDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pantImageView: ResizableView!
     @IBOutlet var chooseBuuton: UIButton!
     @IBOutlet weak var pantButto: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBAction func editButtonClicked(_ sender: Any) {
+        presentTCMaskView(image: torsoImageView.image!)
+    }
+
+
     
     var imagePicker = UIImagePickerController()
 
@@ -60,12 +69,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let selectedImage = info[.originalImage] as? UIImage {
             
             if flag == 1 {
-//                imageView.contentMode = .scaleAspectFill
-                
                 torsoImageView.image = selectedImage
             } else if flag == 2 {
-//                pantImageView.contentMode = .scaleAspectFill
-                
                 pantImageView.image = selectedImage
             }
             
@@ -73,6 +78,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         dismiss(animated: true, completion: nil)
+
+    }
+    
+    func presentTCMaskView(image: UIImage) {
+        let maskView = TCMaskView(image: image)
+        maskView.delegate = self
+        maskView.presentFrom(rootViewController: self, animated: true)
+    }
+    
+    func tcMaskViewDidComplete(mask: TCMask, image: UIImage) {
+        let outputImage = mask.cutout(image: image, resize: true)
+
+        torsoImageView.image = outputImage
 
     }
 
