@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="human_body" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-Bp-xdu">
-                                <rect key="frame" x="50" y="101" width="274" height="546"/>
+                                <rect key="frame" x="47" y="131" width="274" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-v9-du2" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
@@ -166,11 +166,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaE-sm-2Lw">
-                                <rect key="frame" x="151" y="63" width="46" height="30"/>
+                                <rect key="frame" x="131" y="55" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Customize torso"/>
                                 <connections>
                                     <action selector="editButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf0-fD-wZt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-ke-DYN">
+                                <rect key="frame" x="130" y="93" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Customize pants"/>
+                                <connections>
+                                    <action selector="editPantClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Im-8S-8eL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,6 +188,7 @@
                     <connections>
                         <outlet property="chooseBuuton" destination="J1e-v3-jfa" id="MvV-4G-kwA"/>
                         <outlet property="editButton" destination="SaE-sm-2Lw" id="xmh-vw-C8b"/>
+                        <outlet property="editPantButton" destination="FtH-ke-DYN" id="xUJ-cu-V6L"/>
                         <outlet property="pantButto" destination="c3U-ZE-aJf" id="kK5-Z3-caG"/>
                         <outlet property="pantImageView" destination="c3U-ZE-aJf" id="ATO-Hj-ugo"/>
                         <outlet property="torsoImageView" destination="uG0-v9-du2" id="k60-cZ-Yqq"/>

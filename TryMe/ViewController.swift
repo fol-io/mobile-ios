@@ -18,17 +18,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     var flag = 0
+    var CropFlag = 0
     @IBOutlet var torsoImageView: ResizableView!
     @IBOutlet weak var pantImageView: ResizableView!
     @IBOutlet var chooseBuuton: UIButton!
     @IBOutlet weak var pantButto: UIImageView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var editPantButton: UIButton!
     
     @IBAction func editButtonClicked(_ sender: Any) {
-        presentTCMaskView(image: torsoImageView.image!)
+        CropFlag = 1
+        guard let image = torsoImageView.image else {
+            let alert = UIAlertController(title: "Torso Image is nill", message: "Please add a clothing for torso first", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        presentTCMaskView(image: image)
     }
-
-
+    
+    @IBAction func editPantClicked(_ sender: Any) {
+        CropFlag = 2
+        guard let image = pantImageView.image else {
+            let alert = UIAlertController(title: "Pant Image is nill", message: "Please add a clothing for lower body first", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        presentTCMaskView(image: image)
+    }
     
     var imagePicker = UIImagePickerController()
 
@@ -89,8 +107,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func tcMaskViewDidComplete(mask: TCMask, image: UIImage) {
         let outputImage = mask.cutout(image: image, resize: true)
-
-        torsoImageView.image = outputImage
+        
+        if CropFlag == 1 {
+            torsoImageView.image = outputImage
+        } else if CropFlag == 2 {
+            pantImageView.image = outputImage
+        }
 
     }
 
