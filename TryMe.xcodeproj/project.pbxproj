@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2892DE222F37BD00B9D95C /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2892DD222F37BD00B9D95C /* ResizableView.swift */; };
 		9D91DCF92208C75A0060870D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D91DCF82208C75A0060870D /* AppDelegate.swift */; };
 		9D91DCFB2208C75A0060870D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D91DCFA2208C75A0060870D /* ViewController.swift */; };
 		9D91DCFE2208C75A0060870D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D91DCFC2208C75A0060870D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D2892DD222F37BD00B9D95C /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		9D91DCF52208C75A0060870D /* TryMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D91DCF82208C75A0060870D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D91DCFA2208C75A0060870D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				9D91DCF82208C75A0060870D /* AppDelegate.swift */,
 				9D91DCFA2208C75A0060870D /* ViewController.swift */,
 				9D91DCFC2208C75A0060870D /* Main.storyboard */,
+				9D2892DD222F37BD00B9D95C /* ResizableView.swift */,
 				9D91DD36221D37420060870D /* LoginViewController.swift */,
 				9D91DD652227C0610060870D /* CAGradientLayer.swift */,
 				9D91DCFF2208C75C0060870D /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				9D91DCFB2208C75A0060870D /* ViewController.swift in Sources */,
 				9D91DCF92208C75A0060870D /* AppDelegate.swift in Sources */,
 				9D91DD662227C0620060870D /* CAGradientLayer.swift in Sources */,
+				9D2892DE222F37BD00B9D95C /* ResizableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

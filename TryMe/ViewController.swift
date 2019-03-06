@@ -16,8 +16,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     var flag = 0
-    @IBOutlet var torsoImageView: UIImageView!
-    @IBOutlet weak var pantImageView: UIImageView!
+    @IBOutlet var torsoImageView: ResizableView!
+    @IBOutlet weak var pantImageView: ResizableView!
     @IBOutlet var chooseBuuton: UIButton!
     @IBOutlet weak var pantButto: UIImageView!
     
@@ -61,6 +61,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if flag == 1 {
 //                imageView.contentMode = .scaleAspectFill
+                
                 torsoImageView.image = selectedImage
             } else if flag == 2 {
 //                pantImageView.contentMode = .scaleAspectFill

@@ -15,16 +15,21 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var LOGO: UIImageView!
     
     @IBOutlet weak var bottomStackView: UIStackView!
+    //ICONS
+    @IBOutlet weak var emailIconView: UIView!
+    @IBOutlet weak var emailIcon: UIImageView!
+    
+    @IBOutlet weak var passwordIconView: UIView!
+    @IBOutlet weak var passwordIcon: UIImageView!
+    
     //EMAIL STACKVIEW
     @IBOutlet weak var emailStackView: UIStackView!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var emailIcon: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     
     //PASSWORD STACKVIEW
     @IBOutlet weak var passwordStackView: UIStackView!
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordIcon: UIImageView!
     @IBOutlet weak var passwordTextField: UITextField!
     
     //BUTTONS
@@ -189,13 +194,53 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         UIDesign()
         SetupConstraints()
+    
     }
-  
+
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func UIDesign() {
+        //SUBVIEWS
+        topStackView.addSubview(LOGO)
+        bottomStackView.addSubview(emailStackView)
+        bottomStackView.addSubview(passwordStackView)
+        bottomStackView.addSubview(logInButton)
+        bottomStackView.addSubview(signUpButton)
+        view.addSubview(emailIconView)
+        view.addSubview(passwordIconView)
+        
+        emailIconView.addSubview(emailIcon)
+        passwordIconView.addSubview(passwordIcon)
+        
+        emailStackView.addSubview(emailLabel)
+        emailStackView.addSubview(emailTextField)
+        passwordStackView.addSubview(passwordLabel)
+        passwordStackView.addSubview(passwordTextField)
+        
         //BACKGROUND GRADIENT
-        let gradient = CAGradientLayer(start: .topCenter, end: .bottomCenter, colors: [UIColor.white.cgColor, UIColor.gray.cgColor], type: .axial)
+        let gradient = CAGradientLayer(start: .topCenter, end: .bottomCenter, colors: [UIColor.white.cgColor, #colorLiteral(red: 0.1647058824, green: 0.1490196078, blue: 0.2156862745, alpha: 1)], type: .axial)
         gradient.frame = view.bounds
         view.layer.insertSublayer(gradient, at: 0)
+
+        //EMAILS
+        emailLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        emailLabel.text = "EMAIL"
+        emailLabel.font = UIFont(name: "AppleSDGothicNeo", size: 8.0)
+
+        emailTextField.backgroundColor = .clear
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8761153858, green: 0.8636870405, blue: 0.9426476809, alpha: 1)])
+
+        //PASSWORDS
+        passwordLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        passwordLabel.text = "PASSWORD"
+        passwordLabel.font = UIFont(name: "AppleSDGothicNeo", size: 8.0)
+        
+        passwordTextField.backgroundColor = .clear
+        passwordTextField.placeholder = "Enter Password"
 
         //LOGIN BUTTON
         logInButton.backgroundColor = .clear
@@ -209,26 +254,10 @@ class LoginViewController: UIViewController {
         signUpButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         signUpButton.setTitle("SIGN UP", for: .normal)
         
-        topStackView.addSubview(LOGO)
+        emailIconView.backgroundColor = .clear
+        passwordIconView.backgroundColor = .clear
         
-        bottomStackView.addSubview(emailStackView)
-        bottomStackView.addSubview(passwordStackView)
-        bottomStackView.addSubview(logInButton)
-        bottomStackView.addSubview(signUpButton)
-        
-        view.addSubview(emailIcon)
-        view.addSubview(passwordIcon)
-        //
-//        bottomStackView.addSubview(emailLabel)
-//        bottomStackView.addSubview(emailTextField)
-//        bottomStackView.addSubview(passwordLabel)
-//        bottomStackView.addSubview(passwordTextField)
 
-        emailStackView.addSubview(emailLabel)
-        emailStackView.addSubview(emailTextField)
-        
-        passwordStackView.addSubview(passwordLabel)
-        passwordStackView.addSubview(passwordTextField)
     }
     
     func SetupConstraints(){
@@ -246,6 +275,54 @@ class LoginViewController: UIViewController {
         LOGO.leadingAnchor.constraint(equalTo: topStackView.leadingAnchor).isActive = true
         LOGO.trailingAnchor.constraint(equalTo: topStackView.trailingAnchor).isActive = true
         LOGO.bottomAnchor.constraint(equalTo: topStackView.bottomAnchor).isActive = true
+        
+        
+        // EMAIL ICON VIEW
+        emailIconView.translatesAutoresizingMaskIntoConstraints = false
+        emailIconView.topAnchor.constraint(equalTo: bottomStackView.topAnchor).isActive = true
+        emailIconView.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
+        //emailIcon.trailingAnchor.constraint(equalTo: emailTextField.leadingAnchor).isActive = true
+        emailIconView.bottomAnchor.constraint(equalTo: passwordIcon.topAnchor).isActive = true
+        emailIconView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        emailIconView.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
+        
+        // PASSWORD ICON VIEW
+        passwordIconView.translatesAutoresizingMaskIntoConstraints = false
+        passwordIconView.topAnchor.constraint(equalTo: emailIcon.bottomAnchor).isActive = true
+        passwordIconView.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
+        passwordIconView.trailingAnchor.constraint(equalTo: passwordStackView.leadingAnchor).isActive = true
+        passwordIconView.bottomAnchor.constraint(equalTo: logInButton.topAnchor, constant: -20).isActive = true
+        passwordIconView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        passwordIconView.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
+        
+        
+        // EMAIL ICON
+        emailIcon.translatesAutoresizingMaskIntoConstraints = false
+//        emailIcon.topAnchor.constraint(equalTo: bottomStackView.topAnchor).isActive = true
+//        emailIcon.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
+//        //emailIcon.trailingAnchor.constraint(equalTo: emailTextField.leadingAnchor).isActive = true
+//        emailIcon.bottomAnchor.constraint(equalTo: passwordIcon.topAnchor).isActive = true
+//        emailIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        emailIcon.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
+//        emailIcon.topAnchor.constraint(equalTo: emailIconView.topAnchor, constant: 20).isActive = true
+        emailIcon.heightAnchor.constraint(equalTo: emailIconView.heightAnchor, multiplier: 1/3).isActive = true
+        emailIcon.centerYAnchor.constraint(equalTo: emailIconView.centerYAnchor).isActive = true
+        emailIcon.leadingAnchor.constraint(equalTo: emailIconView.leadingAnchor, constant: 10).isActive = true
+        emailIcon.trailingAnchor.constraint(equalTo: emailIconView.trailingAnchor, constant: -10).isActive = true
+//        emailIcon.bottomAnchor.constraint(equalTo: emailIconView.bottomAnchor, constant: -20).isActive = true
+//
+//        // PASSWORD ICON
+        passwordIcon.translatesAutoresizingMaskIntoConstraints = false
+//        passwordIcon.topAnchor.constraint(equalTo: emailIcon.bottomAnchor).isActive = true
+//        passwordIcon.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
+//        passwordIcon.trailingAnchor.constraint(equalTo: passwordStackView.leadingAnchor).isActive = true
+//        passwordIcon.bottomAnchor.constraint(equalTo: logInButton.topAnchor, constant: -20).isActive = true
+//        passwordIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        passwordIcon.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
+        passwordIcon.topAnchor.constraint(equalTo: passwordIconView.topAnchor, constant: 10).isActive = true
+        passwordIcon.leadingAnchor.constraint(equalTo: passwordIconView.leadingAnchor, constant: 10).isActive = true
+        passwordIcon.trailingAnchor.constraint(equalTo: passwordIconView.trailingAnchor, constant: -10).isActive = true
+        passwordIcon.bottomAnchor.constraint(equalTo: passwordIconView.bottomAnchor, constant: -10).isActive = true
         
         //BOTTOM STACK VIEW
         bottomStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -272,16 +349,6 @@ class LoginViewController: UIViewController {
         emailLabel.heightAnchor.constraint(equalTo: emailStackView.heightAnchor, multiplier: 0.5).isActive = true
 
         
-        // EMAIL ICON
-        emailIcon.translatesAutoresizingMaskIntoConstraints = false
-        emailIcon.topAnchor.constraint(equalTo: bottomStackView.topAnchor).isActive = true
-        emailIcon.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
-        //emailIcon.trailingAnchor.constraint(equalTo: emailTextField.leadingAnchor).isActive = true
-        emailIcon.bottomAnchor.constraint(equalTo: passwordIcon.topAnchor).isActive = true
-        emailIcon.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        emailIcon.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
-        
-        
         //EMAIL TEXT FIELD
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor).isActive = true
@@ -307,16 +374,6 @@ class LoginViewController: UIViewController {
         passwordLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor).isActive = true
         passwordLabel.heightAnchor.constraint(equalTo: passwordStackView.heightAnchor, multiplier: 0.5).isActive = true
 
-        // PASSWORD ICON
-        passwordIcon.translatesAutoresizingMaskIntoConstraints = false
-        passwordIcon.topAnchor.constraint(equalTo: emailIcon.bottomAnchor).isActive = true
-        passwordIcon.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor).isActive = true
-        passwordIcon.trailingAnchor.constraint(equalTo: passwordStackView.leadingAnchor).isActive = true
-        passwordIcon.bottomAnchor.constraint(equalTo: logInButton.topAnchor, constant: -20).isActive = true
-        passwordIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        passwordIcon.heightAnchor.constraint(equalTo: bottomStackView.heightAnchor, multiplier: 1/5).isActive = true
-        
-        
         //PASSWORD TEXT FIELD
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor).isActive = true

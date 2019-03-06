@@ -19,14 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-privacy_filled" translatesAutoresizingMaskIntoConstraints="NO" id="VzX-3F-c9w">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-email_filled" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-bf-8Gq">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="bV5-5K-PXT">
                                 <rect key="frame" x="55.5" y="226" width="83.5" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,6 +83,28 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fk-ND-y4c">
+                                <rect key="frame" x="154" y="375" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-email_filled" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-bf-8Gq">
+                                        <rect key="frame" x="70" y="14" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIc-lO-UC0">
+                                <rect key="frame" x="147" y="511" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-password" translatesAutoresizingMaskIntoConstraints="NO" id="VzX-3F-c9w">
+                                        <rect key="frame" x="70" y="14" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="arZ-k3-vXk"/>
@@ -99,11 +113,13 @@
                         <outlet property="LOGO" destination="smI-Cf-ZLa" id="nyS-xX-4Cd"/>
                         <outlet property="bottomStackView" destination="bV5-5K-PXT" id="o8e-uz-ZNw"/>
                         <outlet property="emailIcon" destination="eBt-bf-8Gq" id="cn5-dV-dd8"/>
+                        <outlet property="emailIconView" destination="6Fk-ND-y4c" id="ber-2O-AxY"/>
                         <outlet property="emailLabel" destination="UqM-Fc-k7s" id="bsi-nG-bkt"/>
                         <outlet property="emailStackView" destination="ESX-hz-f29" id="9sj-gE-pKA"/>
                         <outlet property="emailTextField" destination="BYS-J1-7Fb" id="Kzx-xK-wFK"/>
                         <outlet property="logInButton" destination="cF6-1g-MCE" id="5pR-9B-iyy"/>
                         <outlet property="passwordIcon" destination="VzX-3F-c9w" id="hNd-be-KPw"/>
+                        <outlet property="passwordIconView" destination="vIc-lO-UC0" id="6sR-Tt-Ixv"/>
                         <outlet property="passwordLabel" destination="eQx-1w-bfC" id="Fyb-lV-Gli"/>
                         <outlet property="passwordStackView" destination="LsY-CV-0RR" id="YsD-qH-zGl"/>
                         <outlet property="passwordTextField" destination="aWh-AI-BoC" id="AWK-wn-knO"/>
@@ -123,27 +139,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="human_body" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-Bp-xdu">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="human_body" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-Bp-xdu">
                                 <rect key="frame" x="50" y="101" width="274" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-v9-du2">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-v9-du2" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
                                 <rect key="frame" x="67" y="181" width="240" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-ZE-aJf">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-ZE-aJf" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
                                 <rect key="frame" x="125" y="343" width="119" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-v3-jfa">
-                                <rect key="frame" x="67" y="181" width="240" height="164"/>
+                                <rect key="frame" x="91" y="205" width="192" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFw-df-xIH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-02-5cz">
-                                <rect key="frame" x="125" y="343" width="119" height="243"/>
+                                <rect key="frame" x="140" y="364" width="88" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="pantBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxR-aW-Npi"/>
@@ -168,6 +184,6 @@
     <resources>
         <image name="human_body" width="334.07998657226562" height="668.15997314453125"/>
         <image name="icons8-email_filled" width="100" height="100"/>
-        <image name="icons8-privacy_filled" width="100" height="100"/>
+        <image name="icons8-password" width="100" height="100"/>
     </resources>
 </document>
