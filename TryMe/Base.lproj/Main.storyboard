@@ -139,27 +139,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="human_body" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-Bp-xdu">
-                                <rect key="frame" x="47" y="131" width="274" height="546"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-Tm-f0C">
+                                <rect key="frame" x="47" y="131" width="274" height="490"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-v9-du2" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
-                                <rect key="frame" x="67" y="181" width="240" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-ZE-aJf" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
-                                <rect key="frame" x="125" y="343" width="119" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="human_body" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-Bp-xdu">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="490"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-v9-du2" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="68" width="216" height="173"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-ZE-aJf" customClass="ResizableView" customModule="TryMe" customModuleProvider="target">
+                                        <rect key="frame" x="78" y="237" width="119" height="217"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-v3-jfa">
-                                <rect key="frame" x="91" y="205" width="192" height="114"/>
+                                <rect key="frame" x="158" y="249" width="55" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="btnClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFw-df-xIH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-02-5cz">
-                                <rect key="frame" x="140" y="364" width="88" height="205"/>
+                                <rect key="frame" x="158" y="403" width="45" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="pantBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxR-aW-Npi"/>
@@ -181,6 +188,14 @@
                                     <action selector="editPantClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Im-8S-8eL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBK-pJ-5kF">
+                                <rect key="frame" x="163" y="629" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltP-mH-GQE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -189,6 +204,8 @@
                         <outlet property="chooseBuuton" destination="J1e-v3-jfa" id="MvV-4G-kwA"/>
                         <outlet property="editButton" destination="SaE-sm-2Lw" id="xmh-vw-C8b"/>
                         <outlet property="editPantButton" destination="FtH-ke-DYN" id="xUJ-cu-V6L"/>
+                        <outlet property="lookView" destination="zkU-Tm-f0C" id="Fhj-KO-qPc"/>
+                        <outlet property="mannequinView" destination="SCi-Bp-xdu" id="KCS-Fh-jkq"/>
                         <outlet property="pantButto" destination="c3U-ZE-aJf" id="kK5-Z3-caG"/>
                         <outlet property="pantImageView" destination="c3U-ZE-aJf" id="ATO-Hj-ugo"/>
                         <outlet property="torsoImageView" destination="uG0-v9-du2" id="k60-cZ-Yqq"/>

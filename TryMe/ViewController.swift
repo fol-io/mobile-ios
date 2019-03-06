@@ -19,12 +19,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     var flag = 0
     var CropFlag = 0
+    @IBOutlet weak var lookView: UIView!
     @IBOutlet var torsoImageView: ResizableView!
     @IBOutlet weak var pantImageView: ResizableView!
     @IBOutlet var chooseBuuton: UIButton!
     @IBOutlet weak var pantButto: UIImageView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editPantButton: UIButton!
+    @IBOutlet weak var mannequinView: UIImageView!
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        let renderer = UIGraphicsImageRenderer(size: lookView.bounds.size)
+        let finishedLook = renderer.image { ctx in
+            lookView.drawHierarchy(in: lookView.bounds, afterScreenUpdates: true)
+        }
+        UIImageWriteToSavedPhotosAlbum(finishedLook, nil, nil, nil);
+
+    }
     
     @IBAction func editButtonClicked(_ sender: Any) {
         CropFlag = 1
