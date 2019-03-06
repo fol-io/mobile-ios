@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var editPantButton: UIButton!
     @IBOutlet weak var mannequinView: UIImageView!
     
+    @IBOutlet weak var saveButton: UIButton!
     @IBAction func saveButtonPressed(_ sender: Any) {
         let renderer = UIGraphicsImageRenderer(size: lookView.bounds.size)
         let finishedLook = renderer.image { ctx in
@@ -126,6 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
 
     }
+    
 
 
 }
