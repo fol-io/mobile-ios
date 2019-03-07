@@ -44,15 +44,8 @@ class LoginViewController: UIViewController {
         if validation == true {
             
             let passwordValidation = passwordVlidation(password: passwordTextField.text ?? "")
-            if passwordValidation == true {
-                
-                // call the back end sign up process . (back end gives back both if it passed back end side's validation process AND successfully or not it went through sign up process(which already takes care of going to the main screen if successful)
-                postRequest(url: "https://try--me.herokuapp.com/auth/signup", callName: "signUp")
-            
-            } else {
-                self.alert(title: "password validation failed", message: "password needs to be stronger", actionTitle: "OK")
-                //TODO: BE MORE SPECIFIC FOR WHAT IS WRONG WITH PASSWORD
-            }
+            postRequest(url: "https://try--me.herokuapp.com/auth/signup", callName: "signUp")
+
 
         } else {
             self.alert(title: "Invalid email", message: "Please enter a valid email", actionTitle: "OK")
