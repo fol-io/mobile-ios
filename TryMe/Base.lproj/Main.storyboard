@@ -142,24 +142,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zb3-S2-zKs">
                                 <rect key="frame" x="15" y="44" width="384" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-ke-DYN">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
-                                        <state key="normal" title="Customize pants"/>
-                                        <connections>
-                                            <action selector="editPantClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Im-8S-8eL"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaE-sm-2Lw">
-                                        <rect key="frame" x="0.0" y="30" width="384" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                         <state key="normal" title="Customize torso"/>
                                         <connections>
                                             <action selector="editButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf0-fD-wZt"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-ke-DYN">
+                                        <rect key="frame" x="0.0" y="30" width="384" height="30"/>
+                                        <state key="normal" title="Customize pants"/>
+                                        <connections>
+                                            <action selector="editPantClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Im-8S-8eL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBK-pJ-5kF">
-                                <rect key="frame" x="15" y="817" width="384" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBK-pJ-5kF">
+                                <rect key="frame" x="15" y="832" width="384" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltP-mH-GQE"/>
@@ -197,18 +197,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="zkU-Tm-f0C" secondAttribute="height" multiplier="3:5" id="AtZ-bQ-OFK"/>
-                                    <constraint firstAttribute="height" constant="490" id="Tfw-q1-uPT"/>
-                                    <constraint firstAttribute="width" constant="294" id="Ydd-T9-fdx"/>
+                                    <constraint firstAttribute="height" constant="490" id="8En-AD-Crx"/>
+                                    <constraint firstAttribute="width" constant="294" id="PJg-xc-8As"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CBK-pJ-5kF" secondAttribute="bottom" constant="15" id="284-nP-44m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zb3-S2-zKs" secondAttribute="trailing" constant="15" id="2dK-0h-iaw"/>
                             <constraint firstItem="zkU-Tm-f0C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9l8-RK-Xxy"/>
                             <constraint firstItem="zb3-S2-zKs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="LJE-8p-ZBQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CBK-pJ-5kF" secondAttribute="bottom" id="YKF-Md-WfA"/>
                             <constraint firstItem="CBK-pJ-5kF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="o9i-ed-h0e"/>
                             <constraint firstItem="zkU-Tm-f0C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGT-EU-IXE"/>
                             <constraint firstItem="zb3-S2-zKs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="whe-74-9ed"/>
